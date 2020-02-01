@@ -8,7 +8,7 @@ PyCharm is an Integrated Development Environment (IDE) used in computer programm
 
 **Build notes**
 
-Latest stable PyCharm release from Arch Linux AUR.
+Latest stable PyCharm Professional release from Arch Linux AUR.
 
 **Usage**
 ```
