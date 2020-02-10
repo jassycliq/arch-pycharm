@@ -46,7 +46,7 @@ source aur.sh
 # set pycharm path selector, this changes the path used by pycharm to check for a custom idea.properties file
 # the path is constructed from /home/nobody/.<idea.paths.selector value>/config/ so the idea.properties file then needs
 # to be located in /home/nobody/.config/pycharm/idea.properties, note double backslash to escape end backslash
-sed -i -e 's~-Didea.paths.selector=.*~-Didea.paths.selector=config/pycharm \\~g' /opt/pycharm/bin/pycharm.sh
+sed -i -e 's~-Didea.paths.selector=.*~-Didea.paths.selector=config/pycharm \\~g' /opt/pycharm-2019.3.3/bin/pycharm.sh
 
 # set pycharm paths for config, plugins, system and log, note the location of the idea.properties
 # file is constructed from the idea.paths.selector value, as shown above.
@@ -65,7 +65,7 @@ if [ ! -f /config/pycharm/config/options/recentProjectDirectories.xml ]; then
 fi
 
 # run pycharm
-/opt/bin/pycharm
+/opt/bin/pycharm-2019.3.3
 EOF
 
 # replace startcmd placeholder string with contents of file (here doc)
