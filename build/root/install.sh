@@ -8,7 +8,7 @@ set -e
 
 # download build scripts from github
 curl --connect-timeout 5 --max-time 600 --retry 5 --retry-delay 0 --retry-max-time 60 -o /tmp/scripts-master.zip -L https://github.com/binhex/scripts/archive/master.zip
-curl --connect-timeout 5 --max-time 600 --retry 5 --retry-delay 0 --retry-max-time 60 -o /tmp/pycharm.tar.gz -L https://download.jetbrains.com/python/pycharm-professional-2019.3.3.tar.gz?_ga=2.258012490.1735359445.1581310714-1436980609.1581310714
+curl --connect-timeout 5 --max-time 600 --retry 5 --retry-delay 0 --retry-max-time 60 -o /tmp/pycharm.tar.gz -L https://download.jetbrains.com/python/pycharm-professional-2019.3.3.tar.gz
 
 # unzip build scripts
 unzip /tmp/scripts-master.zip -d /tmp
