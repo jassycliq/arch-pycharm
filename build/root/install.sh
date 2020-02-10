@@ -12,11 +12,10 @@ curl --connect-timeout 5 --max-time 600 --retry 5 --retry-delay 0 --retry-max-ti
 
 # unzip build scripts
 unzip /tmp/scripts-master.zip -d /tmp
-tar xfz pychar*.tar.gz -C /opt/
+tar xfz pycharm.tar.gz -C /opt/
 
 # move shell scripts to /root
 mv /tmp/scripts-master/shell/arch/docker/*.sh /usr/local/bin/
-mv /tmp/pychar* /opt/pycharm
 
 # pacman packages
 ####
