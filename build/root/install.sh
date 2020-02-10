@@ -106,7 +106,7 @@ rm /tmp/menu_heredoc
 ####
 
 # define comma separated list of paths 
-install_paths="/tmp,/usr/share/themes,/home/nobody,/usr/share/webapps/novnc,/usr/share/pycharm,/usr/share/applications,/etc/xdg"
+install_paths="/tmp,/usr/share/themes,/home/nobody,/usr/share/webapps/novnc,/opt/pycharm-2019.3.3,/usr/share/applications,/etc/xdg"
 
 # split comma separated string into list for install paths
 IFS=',' read -ra install_paths_list <<< "${install_paths}"
