@@ -65,7 +65,7 @@ if [ ! -f /config/pycharm/config/options/recentProjectDirectories.xml ]; then
 fi
 
 # run pycharm
-/opt/bin/pycharm-2019.3.3
+/opt/pycharm-2019.3.3/bin
 EOF
 
 # replace startcmd placeholder string with contents of file (here doc)
