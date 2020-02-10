@@ -8,12 +8,15 @@ set -e
 
 # download build scripts from github
 curl --connect-timeout 5 --max-time 600 --retry 5 --retry-delay 0 --retry-max-time 60 -o /tmp/scripts-master.zip -L https://github.com/binhex/scripts/archive/master.zip
+curl --connect-timeout 5 --max-time 600 --retry 5 --retry-delay 0 --retry-max-time 60 -o /tmp/pycharm.tar.gz -L https://download.jetbrains.com/python/pycharm-professional-2019.3.3.tar.gz?_ga=2.258012490.1735359445.1581310714-1436980609.1581310714
 
 # unzip build scripts
 unzip /tmp/scripts-master.zip -d /tmp
+tar xfz pychar*.tar.gz -C /opt/
 
 # move shell scripts to /root
 mv /tmp/scripts-master/shell/arch/docker/*.sh /usr/local/bin/
+mv /tmp/pychar* /opt/pycharm
 
 # pacman packages
 ####
@@ -33,7 +36,7 @@ fi
 ####
 
 # define aur packages
-aur_packages="websockify pycharm-professional"
+aur_packages="websockify"
 
 # call aur install script (arch user repo)
 source aur.sh
@@ -44,7 +47,7 @@ source aur.sh
 # set pycharm path selector, this changes the path used by pycharm to check for a custom idea.properties file
 # the path is constructed from /home/nobody/.<idea.paths.selector value>/config/ so the idea.properties file then needs
 # to be located in /home/nobody/.config/pycharm/idea.properties, note double backslash to escape end backslash
-sed -i -e 's~-Didea.paths.selector=.*~-Didea.paths.selector=config/pycharm \\~g' /usr/share/pycharm/bin/pycharm.sh
+sed -i -e 's~-Didea.paths.selector=.*~-Didea.paths.selector=config/pycharm \\~g' /opt/pycharm/bin/pycharm.sh
 
 # set pycharm paths for config, plugins, system and log, note the location of the idea.properties
 # file is constructed from the idea.paths.selector value, as shown above.
@@ -63,7 +66,7 @@ if [ ! -f /config/pycharm/config/options/recentProjectDirectories.xml ]; then
 fi
 
 # run pycharm
-/usr/bin/pycharm
+/opt/bin/pycharm
 EOF
 
 # replace startcmd placeholder string with contents of file (here doc)
